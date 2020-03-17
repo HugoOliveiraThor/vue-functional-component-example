@@ -1,17 +1,19 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <functional-component 
+     :brands ="['Tesla', 'Bentley', 'Ferrari', 'Ford']">
+    </functional-component>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import FunctionalComponent from './components/FunctionalComponent.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    FunctionalComponent
   }
 }
 </script>
