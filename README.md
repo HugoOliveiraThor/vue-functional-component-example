@@ -1,29 +1,47 @@
-# functional_component
+# Simple example of VueJS functional components 
 
-## Project setup
+- Example - A file called FunctionalComponent.vue
 ```
-npm install
+<template functional>
+  <div>
+    <p v-for="brand in props.brands" :key="brand">{{brand}} </p>
+  </div>
+</template>
+<script> 
+export default {
+  functional: true,
+  name: 'Test',
+  props: {
+    brands: Object
+  }  
+}
+</script>
+```
+- We can import in our App.vue 
+```
+<template>
+  <div id="app">
+    <img alt="Vue logo" src="./assets/logo.png">
+    <functional-component 
+     :brands ="['Tesla', 'Bentley', 'Ferrari', 'Ford']">
+    </functional-component>
+  </div>
+</template>
+
+<script>
+import FunctionalComponent from './components/FunctionalComponent.vue'
+
+export default {
+  name: 'App',
+  components: {
+    FunctionalComponent
+  }
+}
+</script>
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
 
-### Compiles and minifies for production
-```
-npm run build
-```
 
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
